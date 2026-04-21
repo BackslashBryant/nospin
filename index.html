@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NoSpin - Read with your own judgment</title>
+    <title>NoSpin</title>
     <style>
       :root {
         --bg: #090b12;
@@ -13,55 +13,67 @@
         --accent: #6ea8ff;
         --border: #23304f;
       }
-      * {
+      *,
+      *::before,
+      *::after {
         box-sizing: border-box;
       }
       body {
         margin: 0;
-        font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+        font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif;
         background: radial-gradient(
           circle at 20% -10%,
           #1c2542 0%,
-          var(--bg) 40%
+          var(--bg) 42%
         );
         color: var(--text);
         line-height: 1.6;
+        min-height: 100vh;
       }
       .wrap {
-        max-width: 960px;
+        max-width: 52rem;
         margin: 0 auto;
-        padding: 32px 20px 64px;
+        padding: 1.75rem 1.25rem 3.5rem;
       }
       .hero {
         border: 1px solid var(--border);
         border-radius: 14px;
-        background: rgba(17, 22, 38, 0.9);
-        padding: 28px;
+        background: rgba(17, 22, 38, 0.92);
+        padding: 1.5rem 1.35rem;
       }
       h1 {
-        margin: 0 0 8px;
-        font-size: 2rem;
+        margin: 0 0 0.35rem;
+        font-size: clamp(1.85rem, 5vw, 2.15rem);
+        letter-spacing: -0.02em;
       }
       .tagline {
-        margin: 0 0 18px;
+        margin: 0 0 1rem;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+      .lead {
+        margin: 0;
         color: var(--muted);
       }
       h2 {
-        margin-top: 32px;
-        font-size: 1.25rem;
+        margin: 2rem 0 0.75rem;
+        font-size: 1.15rem;
+        font-weight: 600;
       }
       p,
       li {
         color: var(--muted);
       }
       ul {
-        padding-left: 20px;
+        margin: 0.5rem 0 0;
+        padding-left: 1.25rem;
       }
       .actions {
         display: flex;
-        gap: 12px;
         flex-wrap: wrap;
-        margin-top: 20px;
+        gap: 0.65rem;
+        align-items: center;
+        margin-top: 1.35rem;
       }
       .btn {
         display: inline-block;
@@ -70,30 +82,53 @@
         color: #041125;
         background: var(--accent);
         border-radius: 10px;
-        padding: 10px 14px;
+        padding: 0.65rem 1rem;
         font-weight: 600;
+        font-size: 0.95rem;
+        min-height: 44px;
+        line-height: 1.2;
       }
       .link {
         display: inline-block;
         color: var(--accent);
         text-decoration: none;
-        padding: 10px 14px;
+        padding: 0.65rem 0.85rem;
+        min-height: 44px;
+        line-height: 1.2;
       }
       .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 12px;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+        gap: 0.75rem;
       }
       .card {
         border: 1px solid var(--border);
         border-radius: 12px;
-        padding: 14px;
+        padding: 0.9rem 1rem;
         background: var(--card);
+        font-size: 0.95rem;
+        color: var(--muted);
       }
       footer {
-        margin-top: 34px;
+        margin-top: 2.25rem;
         color: var(--muted);
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+      }
+      @media (max-width: 480px) {
+        .wrap {
+          padding: 1.25rem 1rem 2.5rem;
+        }
+        .hero {
+          padding: 1.25rem 1rem;
+        }
+        .actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .btn,
+        .link {
+          text-align: center;
+        }
       }
     </style>
   </head>
@@ -102,12 +137,13 @@
       <section class="hero">
         <h1>NoSpin</h1>
         <p class="tagline">See when wording may be pushing a story.</p>
-        <p>
-          NoSpin highlights structural signals in news writing so you can stay
-          grounded and read with your own judgment.
+        <p class="lead">
+          NoSpin is a browser extension that surfaces structural spin signals in
+          news writing—patterns in how a story is framed—so you can stay grounded
+          and judge the reporting for yourself.
         </p>
         <div class="actions">
-          <a class="btn" href="#">Available on the Chrome Web Store</a>
+          <a class="btn" href="#">Chrome Web Store (coming soon)</a>
           <a class="link" href="./privacy.html">Privacy policy</a>
         </div>
       </section>
@@ -115,27 +151,36 @@
       <section>
         <h2>What NoSpin detects</h2>
         <div class="grid">
-          <article class="card">One-sided sourcing or source imbalance</article>
-          <article class="card">Vague authority claims without support</article>
-          <article class="card">Unsupported causality framing</article>
-          <article class="card">Identity-salience framing language</article>
-          <article class="card">Headline-body tension</article>
+          <article class="card">One-sided sourcing</article>
+          <article class="card">Vague authority</article>
+          <article class="card">Unsupported causality</article>
+          <article class="card">Identity-salience framing</article>
           <article class="card">Denominator-free statistics</article>
+          <article class="card">Headline-body tension</article>
         </div>
       </section>
 
       <section>
         <h2>What NoSpin does not do</h2>
         <ul>
+          <li>It does not collect your data or run analytics.</li>
+          <li>It does not track you across sites.</li>
+          <li>It does not send article text or page content to any server.</li>
+          <li>It does not require an account or sign-in.</li>
           <li>It is not a fact-checker and does not decide what is true.</li>
-          <li>It does not collect or transmit your article content.</li>
-          <li>It does not require an account, sign-in, or tracking profile.</li>
+          <li>It does not call external services for analysis.</li>
         </ul>
       </section>
 
-      <footer>
-        Built for readers who want clearer language signals, not louder takes.
-      </footer>
+      <section>
+        <h2>How settings are stored</h2>
+        <p class="lead">
+          User preferences live only in <strong>chrome.storage.local</strong> on
+          your device. Nothing is transmitted for storage or sync.
+        </p>
+      </section>
+
+      <footer>NoSpin — read with your own judgment.</footer>
     </main>
   </body>
 </html>
