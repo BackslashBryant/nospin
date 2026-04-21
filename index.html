@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoSpin - Read with your own judgment</title>
+    <style>
+      :root {
+        --bg: #090b12;
+        --card: #111626;
+        --text: #ecf0ff;
+        --muted: #a6b2d1;
+        --accent: #6ea8ff;
+        --border: #23304f;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+        background: radial-gradient(
+          circle at 20% -10%,
+          #1c2542 0%,
+          var(--bg) 40%
+        );
+        color: var(--text);
+        line-height: 1.6;
+      }
+      .wrap {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 32px 20px 64px;
+      }
+      .hero {
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: rgba(17, 22, 38, 0.9);
+        padding: 28px;
+      }
+      h1 {
+        margin: 0 0 8px;
+        font-size: 2rem;
+      }
+      .tagline {
+        margin: 0 0 18px;
+        color: var(--muted);
+      }
+      h2 {
+        margin-top: 32px;
+        font-size: 1.25rem;
+      }
+      p,
+      li {
+        color: var(--muted);
+      }
+      ul {
+        padding-left: 20px;
+      }
+      .actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        border: 1px solid var(--accent);
+        color: #041125;
+        background: var(--accent);
+        border-radius: 10px;
+        padding: 10px 14px;
+        font-weight: 600;
+      }
+      .link {
+        display: inline-block;
+        color: var(--accent);
+        text-decoration: none;
+        padding: 10px 14px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 12px;
+      }
+      .card {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 14px;
+        background: var(--card);
+      }
+      footer {
+        margin-top: 34px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="hero">
+        <h1>NoSpin</h1>
+        <p class="tagline">See when wording may be pushing a story.</p>
+        <p>
+          NoSpin highlights structural signals in news writing so you can stay
+          grounded and read with your own judgment.
+        </p>
+        <div class="actions">
+          <a class="btn" href="#">Available on the Chrome Web Store</a>
+          <a class="link" href="./privacy.html">Privacy policy</a>
+        </div>
+      </section>
+
+      <section>
+        <h2>What NoSpin detects</h2>
+        <div class="grid">
+          <article class="card">One-sided sourcing or source imbalance</article>
+          <article class="card">Vague authority claims without support</article>
+          <article class="card">Unsupported causality framing</article>
+          <article class="card">Identity-salience framing language</article>
+          <article class="card">Headline-body tension</article>
+          <article class="card">Denominator-free statistics</article>
+        </div>
+      </section>
+
+      <section>
+        <h2>What NoSpin does not do</h2>
+        <ul>
+          <li>It is not a fact-checker and does not decide what is true.</li>
+          <li>It does not collect or transmit your article content.</li>
+          <li>It does not require an account, sign-in, or tracking profile.</li>
+        </ul>
+      </section>
+
+      <footer>
+        Built for readers who want clearer language signals, not louder takes.
+      </footer>
+    </main>
+  </body>
+</html>
