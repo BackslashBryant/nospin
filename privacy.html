@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NoSpin Privacy Policy</title>
+    <title>NoSpin — Privacy</title>
     <style>
       :root {
         --bg: #090b12;
@@ -13,94 +13,123 @@
         --accent: #6ea8ff;
         --border: #23304f;
       }
-      * {
+      *,
+      *::before,
+      *::after {
         box-sizing: border-box;
       }
       body {
         margin: 0;
-        font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
-        background: var(--bg);
+        font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+        background: radial-gradient(
+          circle at 20% -10%,
+          #1c2542 0%,
+          var(--bg) 42%
+        );
         color: var(--text);
         line-height: 1.65;
+        min-height: 100vh;
       }
       .wrap {
-        max-width: 900px;
+        max-width: 48rem;
         margin: 0 auto;
-        padding: 28px 20px 56px;
+        padding: 1.75rem 1.25rem 3rem;
+      }
+      .nav {
+        margin-bottom: 1rem;
+      }
+      .nav a {
+        color: var(--accent);
+        text-decoration: none;
+        font-size: 0.95rem;
+      }
+      .nav a:hover {
+        text-decoration: underline;
       }
       .card {
         border: 1px solid var(--border);
         border-radius: 14px;
-        background: var(--card);
-        padding: 24px;
+        background: rgba(17, 22, 38, 0.92);
+        padding: 1.35rem 1.25rem;
       }
       h1 {
-        margin: 0 0 8px;
-        font-size: 1.9rem;
+        margin: 0 0 0.5rem;
+        font-size: clamp(1.65rem, 4.5vw, 1.95rem);
       }
       h2 {
-        margin-top: 24px;
-        font-size: 1.2rem;
+        margin: 1.5rem 0 0.5rem;
+        font-size: 1.1rem;
+        font-weight: 600;
       }
       p,
       li {
         color: var(--muted);
+        margin: 0.4rem 0;
       }
       ul {
-        padding-left: 20px;
+        padding-left: 1.25rem;
+        margin: 0.35rem 0 0;
+      }
+      code {
+        font-size: 0.9em;
+        color: var(--text);
       }
       a {
         color: var(--accent);
         text-decoration: none;
       }
+      a:hover {
+        text-decoration: underline;
+      }
       .meta {
-        margin-top: 28px;
-        font-size: 0.95rem;
+        margin-top: 2rem;
+        font-size: 0.92rem;
         color: var(--muted);
+      }
+      @media (max-width: 480px) {
+        .wrap {
+          padding: 1.25rem 1rem 2.5rem;
+        }
+        .card {
+          padding: 1.15rem 1rem;
+        }
       }
     </style>
   </head>
   <body>
     <main class="wrap">
+      <p class="nav"><a href="./index.html">← NoSpin home</a></p>
       <article class="card">
         <h1>NoSpin Privacy Policy</h1>
-        <p>This policy applies to the NoSpin browser extension.</p>
+        <p>This policy applies to the <strong>NoSpin</strong> browser extension.</p>
 
-        <h2>What data NoSpin collects</h2>
+        <h2>Data collected</h2>
+        <p><strong>None.</strong> NoSpin does not collect personal data. It does not send your browsing history, article text, or page content to any external server.</p>
+
+        <h2>What is stored</h2>
         <p>
-          NoSpin does not collect personal data. It does not send your browsing
-          history, article text, or page content to any external server.
+          Only <strong>user settings</strong> are stored, on your own device, in
+          <code>chrome.storage.local</code> (for example: global on/off, per-site
+          overrides, and other preference values needed for the extension to work).
+        </p>
+        <p>That data is never transmitted by NoSpin and is not synced to the cloud.</p>
+
+        <h2>Analytics, tracking, and third parties</h2>
+        <p>
+          NoSpin does not use analytics, tracking pixels, advertising networks, or
+          third-party telemetry. There are no external services invoked for
+          analysis or data collection.
         </p>
 
-        <h2>What is stored locally</h2>
-        <p>
-          NoSpin stores only extension settings on your device in
-          <code>chrome.storage.local</code>, such as:
-        </p>
-        <ul>
-          <li>global enabled or disabled state</li>
-          <li>per-site overrides</li>
-          <li>other local preference values required for extension behavior</li>
-        </ul>
-        <p>This data stays on your device and is not transmitted by NoSpin.</p>
-
-        <h2>Analytics and third-party services</h2>
-        <p>
-          NoSpin does not use analytics, tracking, advertising pixels, or
-          third-party telemetry services.
-        </p>
-
-        <h2>Accounts and sign-in</h2>
-        <p>
-          NoSpin does not require user accounts and does not provide sign-in.
-        </p>
+        <h2>Accounts</h2>
+        <p>No accounts or sign-in are required.</p>
 
         <h2>Contact</h2>
         <p>
-          Questions can be submitted through
+          Questions:
           <a href="https://github.com/BackslashBryant/no-spin/issues"
-            >GitHub issues</a
-          >.
+            >github.com/BackslashBryant/no-spin/issues</a
+          >
         </p>
 
         <p class="meta">Last updated: April 2026</p>
